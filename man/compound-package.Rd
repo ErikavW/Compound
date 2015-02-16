@@ -18,7 +18,7 @@ Version: \tab 1.0\cr
 Date: \tab 2015-02-16\cr
 License: \tab What license is it under?\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+~~ An overview of how 2 use the package, including the most important functions ~~
 }
 \author{
 Erika van Wijk
