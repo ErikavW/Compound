@@ -40,7 +40,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   if (draw.start == T){
     source("C:\\Users\\Erika\\Documents\\R\\Optimal MCMC\\Data-archive\\Functions\\START_par.r")
     
-    par <- START_par(N,K,D,M)
+    par <- START_par(N=N,K=K,D=D,M=M)
     alpha<-par[[1]]
     theta<-par[[2]]
     beta<-par[[3]]
