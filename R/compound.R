@@ -36,8 +36,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   if(!is.matrix(y)){
     stop("The dataframe included is not a matrix")  
   }
-  
-  
+    
   N<-nrow(y)
   K<-ncol(y)
   
@@ -108,5 +107,5 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
       B[,,s]<-beta
     }
   }
-  return(list(alpha=alpha,theta=theta,beta=beta[,2:max(M)+1],rho=rho,weights=weights))
+  return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],rho=rho,weights=weights))
 }
