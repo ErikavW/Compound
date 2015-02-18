@@ -44,7 +44,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   
   # beta <- CLEAN_itempar(y,beta)
   if (draw.start == T){
-    source("C:\\Users\\Erika\\Documents\\R\\Optimal MCMC\\Data-archive\\Functions\\START_par.r")
+    #source("C:\\Users\\Erika\\Documents\\R\\Optimal MCMC\\Data-archive\\Functions\\START_par.r")
     
     par <- START_par(N=N,K=K,D=D,M=M)
     alpha<-par[[1]]
