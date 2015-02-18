@@ -34,8 +34,10 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   library("MCMCpack")    # Inverse Wishart verdeling
   
   if(!is.matrix(y)){
-    print("The dataframe included is not a matrix")
+    stop("The dataframe included is not a matrix")
+    
   }
+  
   
   N<-nrow(y)
   K<-ncol(y)
