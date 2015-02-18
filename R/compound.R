@@ -36,7 +36,8 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   if(!is.matrix(y)){
     stop("The dataframe included is not a matrix")  
   }
-    
+  
+  
   N<-nrow(y)
   K<-ncol(y)
   
