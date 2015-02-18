@@ -1,6 +1,6 @@
 START_par <- function(N,K,D,M){
   #Startwaardes
-  alpha<-matrix(c(rep(c(1,0,0),(K/D)),rep(c(0,1,0),(K/D)),rep(c(0,0,1),(K/D))),nrow=K,ncol=D, byrow=T)
+  alpha<-matrix(1,nrow=K,ncol=D)
   
   beta<-matrix(NA,nrow=K,ncol=max(M))
   for (i in 1:K){
