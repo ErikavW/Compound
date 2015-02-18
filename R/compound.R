@@ -33,7 +33,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   library("mvtnorm")     # Multivariate normale verdeling
   library("MCMCpack")    # Inverse Wishart verdeling
   
-  if(!is.matrix(y)){
+  if(is.matrix(y)){
     print("The dataframe included is not a matrix")
   }
   
