@@ -9,7 +9,7 @@ START_par <- function(N,K,D,M){
   beta<-cbind(-Inf,beta,Inf)  ## waardes voor 0 en M+1
   
   
-  theta<-rmvnorm(N,c(0,0,0),matrix(c(1,0,0,0,1,0,0,0,1),nrow=D,ncol=D))
+  theta<-rmvnorm(N,rep(0,D),diag(D))
   
   return(list(alpha,theta,beta))
 }
