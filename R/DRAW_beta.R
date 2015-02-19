@@ -17,7 +17,12 @@ DRAW_beta <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.01, var.p,u.p){
         mean<-beta(i,j)
         Ab<-pnorm((mean-beta[i,(j+1)]),sd.MH)-pnorm((mean-b[i,(j-1)]),sd.MH) # Normaal Ogive model 
         Bb<-pnorm((mean-b[i,(j+1)]),sd.MH)-pnorm((mean-beta[i,(j-1)]),sd.MH)
-        temp1<-temp1*(Ab/Bb)
+        if (Bb==0 & Ab==0){  
+          print("Bb & Ab are 0") 
+          temp1<-temp1*1
+        }else{
+          temp1<-temp1*(Ab/Bb)
+        }
       }
       for (n in 1:N){
         mean<-sum(alpha[i,]*theta[n,])
@@ -29,6 +34,7 @@ DRAW_beta <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.01, var.p,u.p){
           Ab<-pnorm(mean-b[i,ee])-pnorm(mean-b[i,(ee-1)])
           Bb<-pnorm(mean-beta[i,ee])-pnorm(mean-beta[i,(ee-1)])
           if (Bb==0 & Ab==0){                         ### Wat als Bb en Ab beide 0 zijn???
+            print("Bb & Ab are 0") 
             temp2<-temp2*1
           }else{
             temp2<-temp2*(Ab/Bb)
