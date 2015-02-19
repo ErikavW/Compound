@@ -110,7 +110,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   if (D==1){
     return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],A=A,B=B)
   }else{
-    return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],rho=rho,weights=weights),A=A,B=B)    
+    return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],rho=rho,weights=weights,A=A,B=B))    
   }
   
 }
