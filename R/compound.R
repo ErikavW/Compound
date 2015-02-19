@@ -26,7 +26,7 @@
 #' 
 #' @export
 
-compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.start=T,fix.itemparameters=T){
+compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.start=T,fix.itemparameters=F){
   # Benodigde packages
   #install.packages("BayesBridge")
   library("BayesBridge") # Truncated normale verdleing
