@@ -1,4 +1,4 @@
-DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05, var.p,u.p){
+DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05, var.p,u.p,M){
   b<-beta
   K<-nrow(beta)
   N<-nrow(y)
@@ -26,7 +26,7 @@ DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05, var.p,u.p){
           Ab<-1-pnorm(true-b[i,ee])
           Bb<-1-pnorm(true-beta[i,ee])
         }else{
-          if(y[n,i]=max(m)){
+          if(y[n,i]==M[i]){
             Ab<-pnorm(true-b[i,ee-1])
             Bb<-pnorm(true-beta[i,ee-1])
           }else{
