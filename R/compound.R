@@ -69,7 +69,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
   
   # Creeeren matrices die later gebruikt worden voor creeren caterpillarplots alpha en beta
   A<-array(c(0),dim=c(K,D,Sim))
-  B<-array(c(0),dim=c(K,max(M)+2,Sim))
+  B<-array(c(0),dim=c(K,max(M),Sim))
   
   if (D==1){
     print("Only one dimension no weigths estimated, only person and itemparameters")
@@ -84,7 +84,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
     if (response == "continue" ){
       z <- (y-mean(y))/sd(y)
     }else{
-      z <- DRAW_z(y,alpha,theta,beta,response)
+      z <- DRAW_z2(y,alpha,theta,beta,response)
     } 
     # Stap 3. Trek theta uit normaal verdeling mu en sigma theta.
     theta <- DRAW_theta(z=z,sig.theta=mu.sig[[2]],u=mu.sig[[1]],alpha=alpha,theta=theta)
