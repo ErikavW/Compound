@@ -17,14 +17,17 @@ DRAW_z2 <- function(y,alpha,theta,beta,response,M){
       }else{
         
         if (response == "polytoom"){
-          if (y[n,i]==1){
-            z[n,i]<- rtnorm(1,mu=true, right=beta[i,y[n,i]])
+          if (y[n,i]==0){
           }else{
-            if (y[n,i]==M[i]){
-              z[n,i]<- rtnorm(1,mu=true, left=beta[i,(y[n,i]-1)])
+            if (y[n,i]==1){
+            z[n,i]<- rtnorm(1,mu=true, right=beta[i,y[n,i]])
             }else{
-              # Replace ordinal data with continues data. Trek uit normaal verdeling
-              z[n,i]<- rtnorm(1,mu=true,left=beta[i,(y[n,i])-1], right=beta[i,y[n,i]])
+              if (y[n,i]==M[i]){
+                z[n,i]<- rtnorm(1,mu=true, left=beta[i,(y[n,i]-1)])
+              }else{
+                # Replace ordinal data with continues data. Trek uit normaal verdeling
+                z[n,i]<- rtnorm(1,mu=true,left=beta[i,(y[n,i])-1], right=beta[i,y[n,i]])
+              }
             }
           }
         }else{
