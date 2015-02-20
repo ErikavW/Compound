@@ -1,4 +1,4 @@
-DRAW_beta <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.01, var.p,u.p){
+DRAW_beta <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05, var.p,u.p){
   b<-beta
   K<-nrow(beta)
   N<-nrow(y)
