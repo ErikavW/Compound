@@ -22,7 +22,7 @@ DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05, var.p,u.p){
       for (n in 1:N){
         ee<- y[n,i]
         true <- alpha[i]*theta[n]
-        if(y[n,i]=1){
+        if(y[n,i]==1){
           Ab<-1-pnorm(true-b[i,ee])
           Bb<-1-pnorm(true-beta[i,ee])
         }else{
