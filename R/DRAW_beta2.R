@@ -42,12 +42,12 @@ DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05,var.p,u.p){
       for (n in 1:N){
         for(j in 1:M[i]){
           if(j==1){
-            Ab<-pnorm((beta[i,2]-beta[i,1]),sd.MH)
-            Bb<-pnorm((b[i,2]-b[i,1]),sd.MH)
+            Ab<-1-pnorm((beta[i,2]-beta[i,1]),sd.MH)
+            Bb<-1-pnorm((b[i,2]-b[i,1]),sd.MH)
           }else{
             if(j==M[i]){
-              Ab<-1-pnorm((b[i,(M[i]-1)]-beta[i,M[i]]),sd.MH)
-              Bb<-1-pnorm((beta[i,(M[i]-1)]-b[i,M[i]]),sd.MH)
+              Ab<-pnorm((b[i,(M[i]-1)]-beta[i,M[i]]),sd.MH)
+              Bb<-pnorm((beta[i,(M[i]-1)]-b[i,M[i]]),sd.MH)
             }else{
               Ab<-pnorm((beta[i,(j+1)]-beta[i,j]),sd.MH)-pnorm((b[i,(j-1)]-beta[i,j]),sd.MH)
               Bb<-pnorm((b[i,(j+1)]-b[i,j]),sd.MH)-pnorm((beta[i,(j-1)]-b[i,j]),sd.MH)
@@ -59,7 +59,7 @@ DRAW_beta2 <- function(y,z,response,alpha,theta,beta,M,sd.MH=0.05,var.p,u.p){
       R=temp1*temp2
       ru<-runif(1,0,1)
       if (R<=ru){
-        beta[i,1:M[i]]<-b[i,M[i]]
+        beta[i,1:M[i]]<-b[i,1:M[i]]
       }
     }    
   }else{
