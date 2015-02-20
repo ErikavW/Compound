@@ -99,7 +99,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
     
     # Stap 5 Trek itemparameters  
     if(fix.itemparameters==F){
-      beta <- DRAW_beta2(y,z,response,alpha,theta,beta,M,sd.MH=0.01, var.p,u.p)
+      beta <- DRAW_beta2(y,z,response,alpha,theta,beta,M,sd.MH=0.01,var.p,u.p)
       alpha <- DRAW_alpha(z,alpha,theta,var.p,u.p)
       
       # Matrixes met caterpillar voor alpha en beta
@@ -108,9 +108,9 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
     }
   }
   if (D==1){
-    return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],A=A,B=B))
+    return(list(alpha=alpha,theta=theta,beta=beta[,1:max(M)],A=A,B=B))
   }else{
-    return(list(alpha=alpha,theta=theta,beta=beta[,2:(max(M)+1)],rho=rho,weights=weights,A=A,B=B))    
+    return(list(alpha=alpha,theta=theta,beta=beta[,1:max(M)],rho=rho,weights=weights,A=A,B=B))    
   }
   
 }
