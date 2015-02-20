@@ -1,4 +1,4 @@
-DRAW_z2 <- function(y,alpha,theta,beta,response){
+DRAW_z2 <- function(y,alpha,theta,beta,response,M){
   #install.packages("BayesBridge")
   library("BayesBridge") # Truncated normale verdleing
   

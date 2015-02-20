@@ -84,7 +84,7 @@ compound<-function(y,alpha,theta,beta,response,Sim,D,M,identification=1,draw.sta
     if (response == "continue" ){
       z <- (y-mean(y))/sd(y)
     }else{
-      z <- DRAW_z2(y,alpha,theta,beta,response)
+      z <- DRAW_z2(y,alpha,theta,beta,response,M=M)
     } 
     # Stap 3. Trek theta uit normaal verdeling mu en sigma theta.
     theta <- DRAW_theta(z=z,sig.theta=mu.sig[[2]],u=mu.sig[[1]],alpha=alpha,theta=theta)
